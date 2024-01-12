@@ -3,4 +3,9 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse('article')
+    tags = ['обучение', 'программирование', 'python', 'oop']
+    return render(
+        request,
+        'articles.html',
+        context={'tags': tags},
+    )
